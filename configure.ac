@@ -291,6 +291,17 @@ AC_SUBST(aqbanking_plugins_backends_dirs)
 AC_SUBST(aqbanking_plugins_backends_libs)
 
 
+AC_ARG_ENABLE(install-backend-headers, 
+  [  --enable-install-backend-headers      install backend API headers (default:no)],
+  [install_backend_headers="$enableval"],
+  [install_backend_headers="no"]
+)
+AC_MSG_RESULT($install_backend_headers)
+
+AM_CONDITIONAL(INSTALL_BACKEND_HEADERS,
+               [test "$install_backend_headers" != "no"])
+
+
 ###-------------------------------------------------------------------------
 #
 # ImExporters. Those do not have a required ordering.

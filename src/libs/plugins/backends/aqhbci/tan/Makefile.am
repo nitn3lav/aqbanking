@@ -18,9 +18,11 @@ noinst_HEADERS=\
   tan_text.h \
   tan_image.h
 
-
-#iheaderdir=@aqbanking_headerdir_am@/aqhbci
-#iheader_HEADERS=
+if INSTALL_BACKEND_HEADERS
+iheaderdir=@aqbanking_headerdir_am@/aqhbci/tan
+iheader_HEADERS=\
+ tanmethod.h
+endif
 
 libhbcitan_la_SOURCES=\
   tanmethod.c \

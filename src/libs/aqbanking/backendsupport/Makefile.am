@@ -63,9 +63,12 @@ built_headers_pub= \
 built_headers=$(built_headers_priv) $(built_headers_pub)
 
 
-#iheaderdir=@aqbanking_headerdir_am@/aqbanking
-#iheader_HEADERS=$(built_headers_pub)
-
+if INSTALL_BACKEND_HEADERS
+iheaderdir=@aqbanking_headerdir_am@/aqbanking/backendsupport
+iheader_HEADERS=$(built_headers_pub)\
+  provider.h \
+  provider_be.h
+endif
 
 noinst_HEADERS= $(built_headers_pub)\
   siotlsext.h \

@@ -36,8 +36,14 @@ noinst_HEADERS=\
  account_p.h
 
 
-#iheaderdir=@aqbanking_headerdir_am@/aqhbci
-#iheader_HEADERS=
+if INSTALL_BACKEND_HEADERS
+iheaderdir=@aqbanking_headerdir_am@/aqhbci/banking
+iheader_HEADERS=\
+ provider.h \
+ provider_online.h \
+ user.h \
+ account.h
+endif
 
 libhbcibanking_la_SOURCES=\
  provider.c \
