@@ -59,6 +59,11 @@ iheader_HEADERS=\
  system.h \
  version.h
 
+if INSTALL_BACKEND_HEADERS
+iheader_HEADERS += \
+ banking_be.h
+endif
+
 
 libaqbanking_base_la_SOURCES=\
  account_type.c \

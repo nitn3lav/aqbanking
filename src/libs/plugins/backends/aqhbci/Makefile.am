@@ -16,8 +16,11 @@ CLEANFILES = $(BUILT_SOURCES) hbci.xml
 plugindir= $(aqbanking_plugindir)/providers
 plugin_DATA=aqhbci.xml
 
-#iheaderdir=@aqbanking_headerdir_am@/aqhbci
-#iheader_HEADERS=
+if INSTALL_BACKEND_HEADERS
+iheaderdir=@aqbanking_headerdir_am@/aqhbci
+iheader_HEADERS=\
+  aqhbci.h
+endif
 
 noinst_HEADERS = \
   aqhbci.h \
